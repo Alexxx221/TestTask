@@ -20,7 +20,6 @@ public class HomePage extends BasePage {
     public HomePage() {
         driver.get(ConfigProvider.url);
         PageFactory.initElements(driver, this);
-        //wait.until(ExpectedConditions.visibilityOf(banner));
     }
 
     @Step
