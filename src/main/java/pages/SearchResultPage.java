@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -37,6 +38,7 @@ public class SearchResultPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step
     public SearchResultPage calculate() {
         oneDigitButton.click();
         multiplyButton.click();
