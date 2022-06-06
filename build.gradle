@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.9.6'
+}
+
+allure {
+    version = '2.17.3'
+    adapter {
+        aspectjWeaver = true
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Junit5
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    //Selenium + WedDriverManager
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.4'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.1.1'
+    //AssertJ Assertions
+    implementation 'org.assertj:assertj-core:3.22.0'
+    //TypeSafe Config
+    implementation 'com.typesafe:config:1.4.2'
+    //Allure
+    implementation 'io.qameta.allure:allure-junit5:2.17.3'
+    implementation 'io.qameta.allure:allure-commandline:2.17.3'
+    implementation 'io.qameta.allure:allure-assertj:2.17.3'
+    implementation 'io.qameta.allure:allure-java-commons:2.17.3'
+    runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1'
+}
+
+test {
+    useJUnitPlatform()
+}
